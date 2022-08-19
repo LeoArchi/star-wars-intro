@@ -1,0 +1,124 @@
+@font-face {
+  font-family: "swFont";
+  src: url("Franklin Gothic Book Regular.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  font-family: "swFont";
+}
+
+button {
+  z-index: 5;
+  font-size: 3em;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("background.jpg");
+}
+
+.fadeIn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75vh;
+  z-index: 2;
+  /*background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 1) 100%
+  );*/
+}
+
+.sw-logo {
+  z-index: 3;
+  width: 30vw;
+  animation-duration: 12s;
+  animation-name: logo-scrolling;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.text {
+  z-index: 1;
+  position: absolute;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: rgba(255, 197, 0, 255);
+  font-weight: bold;
+  padding: 1rem;
+
+  /* Position d'origine */
+  transform: perspective(400px) rotateX(45deg) translateY(1185px);
+  animation-duration: 73.5s;
+  animation-delay: 11.5s;
+  animation-name: text-scrolling;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.text .title {
+  white-space: nowrap;
+  overflow: visible;
+  text-align: center;
+  font-size: 3.6em;
+}
+
+.text p {
+  display: block;
+  text-align: justify;
+  width: 40rem;
+  font-size: 3.2em;
+}
+
+@keyframes logo-scrolling {
+  0% {
+    transform: scale(4);
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes text-scrolling {
+  0% {
+    transform: perspective(400px) rotateX(45deg) translateY(1185px);
+    color: rgba(255, 197, 0, 255);
+  }
+  90% {
+    color: rgba(255, 197, 0, 255);
+  }
+  100% {
+    transform: perspective(400px) rotateX(45deg) translateY(-1000px);
+    color: rgba(255, 197, 0, 0);
+  }
+}
