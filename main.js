@@ -54,6 +54,36 @@ button.addEventListener("click", (e) => {
   intro.appendChild(logo);
   intro.appendChild(text);
 
+  toggleFullScreen();
+
   var audio = document.querySelector("audio");
   audio.play();
 });
+
+//https://webdevpuneet.com/web-browsers-full-screen-f11-toggle-function-on-a-web-page/#gsc.tab=0
+function toggleFullScreen() {
+  var doc = window.document;
+  var docEl = doc.documentElement;
+
+  var requestFullScreen =
+    docEl.requestFullscreen ||
+    docEl.mozRequestFullScreen ||
+    docEl.webkitRequestFullScreen ||
+    docEl.msRequestFullscreen;
+  var cancelFullScreen =
+    doc.exitFullscreen ||
+    doc.mozCancelFullScreen ||
+    doc.webkitExitFullscreen ||
+    doc.msExitFullscreen;
+
+  if (
+    !doc.fullscreenElement &&
+    !doc.mozFullScreenElement &&
+    !doc.webkitFullscreenElement &&
+    !doc.msFullscreenElement
+  ) {
+    requestFullScreen.call(docEl);
+  } else {
+    cancelFullScreen.call(doc);
+  }
+}

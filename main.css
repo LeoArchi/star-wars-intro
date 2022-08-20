@@ -73,7 +73,7 @@ button:hover {
   padding: 1rem;
 
   /* Position d'origine */
-  transform: perspective(400px) rotateX(45deg) translateY(1185px);
+  transform: perspective(400px) rotateX(45deg) translateY(85vh);
   animation-duration: 73.5s;
   animation-delay: 11.5s;
   animation-name: text-scrolling;
@@ -111,14 +111,14 @@ button:hover {
 
 @keyframes text-scrolling {
   0% {
-    transform: perspective(400px) rotateX(45deg) translateY(1185px);
+    transform: perspective(400px) rotateX(45deg) translateY(85vh);
     color: rgba(255, 197, 0, 255);
   }
   90% {
     color: rgba(255, 197, 0, 255);
   }
   100% {
-    transform: perspective(400px) rotateX(45deg) translateY(-1000px);
+    transform: perspective(400px) rotateX(45deg) translateY(-1200px);
     color: rgba(255, 197, 0, 0);
   }
 }
